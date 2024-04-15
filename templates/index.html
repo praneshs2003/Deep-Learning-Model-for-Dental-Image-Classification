@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Dental Disease Prediction</title>
+    <style>
+        /* *{box-sizing: border-box;} */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-image: url('static/media/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .mainTit {
+            text-align: center;
+            margin: 25px 150px;
+            padding: 15px 0;
+            color: #080808;
+            /* background-color: #70bfec; */
+            border-radius: 10px;
+            text-shadow: 2px 2px #a3a2a2;
+
+        }
+        .mainForm {
+            text-align: center;
+            margin-top: -45px;
+        
+        }
+        input[type=file]::file-selector-button {
+        margin-right: 20px;
+        border: none;
+        background: #084cdf;
+        padding: 10px 20px;
+        border-radius: 10px;
+        color: #fff;
+        cursor: pointer;
+        transition: background .2s ease-in-out;
+        }
+
+        input[type=file]::file-selector-button:hover {
+        background: #0d45a5;
+        }
+        input {
+            margin: 100px 0 50px;
+            color: #000;
+        }
+        button {
+            display: block;
+            margin: auto;
+            border: none;
+            background-color: #863ce7;
+            color: #fff;
+            width: 160px;
+            height: 40px;
+            border-radius: 5px;
+            font-size: 19px;
+            margin-bottom: 20px;
+        }
+        p {
+            margin: 15px 300px;
+            color: #fff;
+            font-size: 20px;
+            background-color: #5cccdb;
+            border-radius: 5px;
+            padding: 5px;
+            display: none;
+        }
+        .imgFile {
+            width: 40%;
+            margin: auto;
+            overflow: hidden;
+        }
+        img {
+            width: 100%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <section class="main">
+        <div class="container">
+            <div class="mainTit">
+                <h1><Bold>Dental Disease Prediction</Bold></h1>
+            </div>
+            <div class="mainForm">
+                <form action="/upload" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="filename">
+                    <button type="submit">Detect</button>
+                </form>
+                <div class="imgFile">
+                    <img src="{{src}}">
+                </div>
+                <p {{view}}>{{msg}} {{rems}}</p>
+                <p>{{percentage}}</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
